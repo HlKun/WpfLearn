@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ResourceLibrary">
+    <SolidColorBrush x:Key="Brush" Color="Red"/>
+    <SolidColorBrush x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type local:CustomResource1},ResourceId=BlueBrush}" Color="Blue"/>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceLibrary;component/Themes/Dictionary1.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

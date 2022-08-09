@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfLearn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLearn"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonKey" TargetType="Button">
+                <Setter Property="Background" Value="Yellow"></Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="Background" Value="Red"/>
+                    </Trigger>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Red"/>
+                    </Trigger>    
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+        <!--<Button Foreground="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResource1}, ResourceId=BlueBrush}}" Background="{DynamicResource Brush}" Style="{DynamicResource ButtonStyle2}">1234</Button>
+
+        <Button Style="{StaticResource ButtonKey}">1</Button>
+        <Button Style="{StaticResource ButtonKey}" Background="Red">1</Button>
+
+        <Button Style="{DynamicResource ButtonStyle3}">4</Button>-->
+
+    <StackPanel>
+        <Button Click="Button_Click">13</Button>
+        <local:UserControl1></local:UserControl1>
+    </StackPanel>
+</Window>
