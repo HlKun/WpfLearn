@@ -24,7 +24,6 @@ namespace Binding_Validation_Learn
         public MainWindow()
         {
             InitializeComponent();
-            txt.AddHandler(Validation.ErrorEvent, new RoutedEventHandler(ValidError));
         }
 
         private void ValidError(object sender, RoutedEventArgs e)

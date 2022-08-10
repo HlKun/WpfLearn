@@ -6,13 +6,22 @@
         xmlns:local="clr-namespace:Binding_Validation_Learn"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ControlTemplate x:Key="ErrorTemplate">
+            <StackPanel>
+                <AdornedElementPlaceholder x:Name="holder"/>
+                <TextBlock Text="{Binding AdornedElement.(Validation.Errors)[0].ErrorContent, ElementName=holder}"/>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Row="0" x:Name="txt" VerticalAlignment="Center" Background="AliceBlue">
+        <TextBox Grid.Row="0" x:Name="txt" VerticalAlignment="Center" Background="AliceBlue" Validation.ErrorTemplate="{StaticResource ErrorTemplate}">
             <TextBox.Text>
                 <Binding Path="Value" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" ElementName="slider" NotifyOnValidationError="True">
                     <Binding.ValidationRules>
