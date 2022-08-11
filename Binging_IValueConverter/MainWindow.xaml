@@ -1,0 +1,18 @@
+﻿<Window x:Class="Binging_IValueConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Binging_IValueConverter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <local:SexToBoolConverter x:Key="s2bc"></local:SexToBoolConverter>
+    </Window.Resources>
+    <StackPanel>
+            <RadioButton Content="Female" IsChecked="{Binding Sex, Converter={StaticResource s2bc}, ConverterParameter=0}"></RadioButton>
+            <RadioButton Content="Male" IsChecked="{Binding Sex, Converter={StaticResource s2bc}, ConverterParameter=1}" Margin="0 10 0 10"></RadioButton>
+
+        <Button x:Name="btn" Click="btn_Click">BUTTON</Button>
+    </StackPanel>
+</Window>

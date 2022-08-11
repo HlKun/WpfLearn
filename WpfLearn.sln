@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelativeSource_Learn", "Rel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding_Validation_Learn", "Binding_Validation_Learn\Binding_Validation_Learn.csproj", "{98A35A49-D7CE-4D46-BB25-915996A6D1BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binging_IValueConverter", "Binging_IValueConverter\Binging_IValueConverter.csproj", "{1D14DCF2-2701-4ABF-94FA-7663C8A94167}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biingding_MultiBingding", "Biingding_MultiBingding\Biingding_MultiBingding.csproj", "{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{98A35A49-D7CE-4D46-BB25-915996A6D1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A35A49-D7CE-4D46-BB25-915996A6D1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A35A49-D7CE-4D46-BB25-915996A6D1BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D14DCF2-2701-4ABF-94FA-7663C8A94167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D14DCF2-2701-4ABF-94FA-7663C8A94167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D14DCF2-2701-4ABF-94FA-7663C8A94167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D14DCF2-2701-4ABF-94FA-7663C8A94167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
