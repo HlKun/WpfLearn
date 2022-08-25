@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,20 +19,32 @@ namespace WpfDependecy
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
-            StudentName = "4";
+            DataContext = this;
+
+            ContentSource = "BUTTON";
         }
 
-        public string StudentName { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private string contentSource;
+        public string ContentSource
         {
-            this.StudentName = "0";
+            get { return contentSource; }
+            set
+            {
+                contentSource = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ContentSource"));
+            }
+        }
+
+        private void ShowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ContentSource = "B01";
         }
     }
 }

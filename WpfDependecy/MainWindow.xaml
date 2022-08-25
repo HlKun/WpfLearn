@@ -7,10 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <!--<local:UserControl1 CustomColor="Blue"></local:UserControl1>-->
+        <local:CustomButton MyContent="{Binding ContentSource}"></local:CustomButton>
 
-        <TextBox Text="{Binding StudentName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
-        <Button Click="Button_Click">Change</Button>
-        <CheckBox Checked=""></CheckBox>
+        <Button x:Name="ShowBtn" Click="ShowBtn_Click" Content="{Binding ContentSource}"></Button>
     </StackPanel>
 </Window>

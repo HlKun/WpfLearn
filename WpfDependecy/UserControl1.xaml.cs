@@ -22,7 +22,7 @@ namespace WpfDependecy
     {
         public UserControl1()
         {
-            //this.DataContext = this;
+            DataContext = this;
             InitializeComponent();
         }
 
@@ -33,6 +33,11 @@ namespace WpfDependecy
         }
 
         public static readonly DependencyProperty CustomColorProperty =
-            DependencyProperty.Register("CustomColor", typeof(Brush), typeof(UserControl1), new FrameworkPropertyMetadata(Brushes.Red));
+            DependencyProperty.Register("CustomColor", typeof(Brush), typeof(UserControl1), new FrameworkPropertyMetadata(CustomColorChanged));
+
+        private static void CustomColorChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

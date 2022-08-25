@@ -23,7 +23,7 @@
 
         <TextBox Grid.Row="0" x:Name="txt" VerticalAlignment="Center" Background="AliceBlue" Validation.ErrorTemplate="{StaticResource ErrorTemplate}">
             <TextBox.Text>
-                <Binding Path="Value" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" ElementName="slider" NotifyOnValidationError="True">
+                <Binding Path="Value" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" ElementName="slider" NotifyOnValidationError="False">
                     <Binding.ValidationRules>
                         <local:RangeRuleValid ValidatesOnTargetUpdated="True"/>
                     </Binding.ValidationRules>
