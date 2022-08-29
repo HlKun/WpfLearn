@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binging_IValueConverter", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biingding_MultiBingding", "Biingding_MultiBingding\Biingding_MultiBingding.csproj", "{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Depependecy_Attached", "Depependecy_Attached\Depependecy_Attached.csproj", "{9092D5FD-455F-4C42-8E6B-B0C74C2F66A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{9A843B65-475A-40C2-8EE1-B99AFBE8C5A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event_WPF", "Event_WPF\Event_WPF.csproj", "{AD981FCD-300A-4FC2-950F-E731881119F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +63,18 @@ Global
 		{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D68C50E-3C65-4C0B-913E-53C6D0EDA1D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9092D5FD-455F-4C42-8E6B-B0C74C2F66A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9092D5FD-455F-4C42-8E6B-B0C74C2F66A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9092D5FD-455F-4C42-8E6B-B0C74C2F66A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9092D5FD-455F-4C42-8E6B-B0C74C2F66A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A843B65-475A-40C2-8EE1-B99AFBE8C5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A843B65-475A-40C2-8EE1-B99AFBE8C5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A843B65-475A-40C2-8EE1-B99AFBE8C5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A843B65-475A-40C2-8EE1-B99AFBE8C5A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD981FCD-300A-4FC2-950F-E731881119F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD981FCD-300A-4FC2-950F-E731881119F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD981FCD-300A-4FC2-950F-E731881119F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD981FCD-300A-4FC2-950F-E731881119F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
