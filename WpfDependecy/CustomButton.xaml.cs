@@ -32,14 +32,14 @@ namespace WpfDependecy
         }
 
         public static readonly DependencyProperty MyContentProperty =
-            DependencyProperty.Register("MyContent", typeof(string), typeof(CustomButton), new PropertyMetadata("NULL",MyContentChanged));
+            DependencyProperty.Register("MyContent", typeof(string), typeof(CustomButton), new PropertyMetadata("", MyContentChanged));
 
         private static void MyContentChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is CustomButton button)
             {
                 Button b = (Button)button.FindName("TitleButton");
-                b.Content = button.MyContent;
+                b.Content = (string)e.NewValue;
             }
         }
     }
