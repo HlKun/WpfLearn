@@ -11,7 +11,6 @@ namespace DesignPattern
         private static readonly object locker = new object();
         private static Singleton _instance;
 
-
         // without lock
         public static Singleton GetSingleton()
         {
