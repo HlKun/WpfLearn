@@ -6,7 +6,8 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IDevice device = new Computer();
+            device.TurnOn();
         }
     }
 }

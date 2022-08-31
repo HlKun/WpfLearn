@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DesignPattern
 {
+    /// <summary>
+    /// 单例
+    /// </summary>
     public class Singleton
     {
         private Singleton() { }
