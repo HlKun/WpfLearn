@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DesignPattern.Interface;
+using DesignPattern.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPattern
+namespace DesignPattern.Factory
 {
     /// <summary>
     /// 简单工厂模式
@@ -20,27 +22,6 @@ namespace DesignPattern
                 "C" => new Computer(),
                 _ => null,
             };
-        }
-    }
-
-    public interface IDevice
-    {
-        public void TurnOn();
-    }
-
-    public class Phone : IDevice
-    {
-        public void TurnOn()
-        {
-            Console.WriteLine("Phone truns on");
-        }
-    }
-
-    public class Computer : IDevice
-    {
-        public void TurnOn()
-        {
-            Console.WriteLine("Computer turns on");
         }
     }
 }
