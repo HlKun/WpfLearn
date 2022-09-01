@@ -27,6 +27,10 @@ namespace Event_WPF
 
         private void Button_Click(object sender, ReportTimeEventArgs e)
         {
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
 
         }
     }

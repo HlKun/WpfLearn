@@ -1,13 +1,18 @@
-﻿<Window x:Class="Event_WPF.MainWindow"
+﻿<Window x:Class="Command_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Event_WPF"
+        xmlns:local="clr-namespace:Command_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid ButtonBase.Click="Button_Click_1">
-        <Button ></Button>
-        <!--<local:TimeButotn local:TimeButotn.ReportTime="Button_Click" x:Name="TimeButton"></local:TimeButotn>-->
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBox x:Name="text" VerticalAlignment="Center" Grid.Row="1"></TextBox>
+        <Button x:Name="button"/>
     </Grid>
 </Window>
