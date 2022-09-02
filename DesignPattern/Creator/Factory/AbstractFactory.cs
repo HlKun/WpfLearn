@@ -4,7 +4,7 @@ using System.Text;
 using DesignPattern.Interface;
 using DesignPattern.Model;
 
-namespace DesignPattern.Factory
+namespace DesignPattern.Creator.Factory
 {
     /// <summary>
     /// 不满足开闭原则

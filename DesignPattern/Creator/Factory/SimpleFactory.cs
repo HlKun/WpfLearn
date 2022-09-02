@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPattern.Factory
+namespace DesignPattern.Creator.Factory
 {
     /// <summary>
     /// 简单工厂模式

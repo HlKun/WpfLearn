@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DesignPattern.Singleton
+namespace DesignPattern.Creator.Singleton
 {
     /// <summary>
     /// 单例

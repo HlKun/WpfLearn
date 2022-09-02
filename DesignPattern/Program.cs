@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPattern.Creator.Builder;
 
 namespace DesignPattern
 {
@@ -6,8 +7,10 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
-            IDevice device = new Computer();
-            device.TurnOn();
+            Builder builder = new IPhoneBuilder();
+            PhoneDirector.Builder(builder);
+
+            var p = builder.Get();
         }
     }
 }

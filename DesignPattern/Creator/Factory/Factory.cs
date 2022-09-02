@@ -4,7 +4,7 @@ using System.Text;
 using DesignPattern.Interface;
 using DesignPattern.Model;
 
-namespace DesignPattern.Factory
+namespace DesignPattern.Creator.Factory
 {
     public abstract class Factory
     {
