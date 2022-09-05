@@ -13,7 +13,9 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="1">
-            <Button x:Name="DrawPolyLineButton" Click="DrawPolyLineButton_Click">绘制多段线</Button>
+            <Button x:Name="DrawPointButton" Click="DrawPointButton_Click">绘制点</Button>
+            <Button x:Name="DrawPolyLineButton" Click="DrawPolyLineButton_Click" Margin="0,20,0,0">绘制多段线</Button>
+            <Button x:Name="GetResultButton" Click="GetResultButton_Click"  Margin="0,20,0,0">求解</Button>
         </StackPanel>
     </Grid>
 </Window>

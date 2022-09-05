@@ -40,12 +40,10 @@ namespace MxCAD
         private void DrawPoint()
         {
             MxDrawUtility mxUtility = new MxDrawUtility();
-            axMxDrawX.SetSysVarDouble("PDSIZE", 15.0);
 
             while (true)
             {
-                MxDrawPoint point = mxUtility.GetPoint(null, "指定点:");
-
+                MxDrawPoint point = mxUtility.GetPoint(null, "指定点");
                 if (point == null)
                     return;
 
@@ -55,19 +53,18 @@ namespace MxCAD
 
         private void DrawPolyLine()
         {
-            MxDrawPoint point1 = (MxDrawPoint)axMxDrawX.GetPoint(false, 0, 0, "点取第一点:");
+            MxDrawUtility mxUtility = new MxDrawUtility();
+
+            MxDrawPoint point1 = mxUtility.GetPoint(null, "点取第一点");
             if (point1 == null)
                 return;
 
-            //把路径的开始位置移动指定的点
             axMxDrawX.PathMoveTo(point1.x, point1.y);
 
-            //与用户交互到在图上提取一个点
-            MxDrawPoint point2 = (MxDrawPoint)axMxDrawX.GetPoint(true, point1.x, point1.y, "点取下一点:");
+            MxDrawPoint point2 = mxUtility.GetPoint(point1, "点取下一点");
             if (point2 == null)
                 return;
 
-            //把路径下一个点移到指定位置
             axMxDrawX.PathLineTo(point2.x, point2.y);
             long id = axMxDrawX.DrawLine(point1.x, point1.y, point2.x, point2.y);
 
@@ -79,7 +76,7 @@ namespace MxCAD
             point1 = point2;
             while (true)
             {
-                point2 = (MxDrawPoint)axMxDrawX.GetPoint(true, point1.x, point1.y, "点取下一点:");
+                point2 = mxUtility.GetPoint(point1, "点取下一点");
                 if (point2 == null)
                     break;
 
@@ -100,13 +97,35 @@ namespace MxCAD
 
         private void AxMxDrawX_ImplementCommandEvent(object sender, AxMxDrawXLib._DMxDrawXEvents_ImplementCommandEventEvent e)
         {
-            if (e.iCommandId == 1)
-                DrawPoint();
+            switch (e.iCommandId)
+            {
+                case 1:
+                    {
+                        DrawPoint();
+                        break;
+                    }
+                case 2:
+                    {
+                        DrawPolyLine();
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+        private void DrawPointButton_Click(object sender, RoutedEventArgs e)
+        {
+            axMxDrawX.DoCommand(1);
         }
 
         private void DrawPolyLineButton_Click(object sender, RoutedEventArgs e)
         {
-            axMxDrawX.DoCommand(1);
+            axMxDrawX.DoCommand(2);
+        }
+
+        private void GetResultButton_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
