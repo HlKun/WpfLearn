@@ -1,5 +1,5 @@
 ﻿
-namespace MxCaDWinform
+namespace MxCADWinform
 {
     partial class Form1
     {
@@ -37,10 +37,10 @@ namespace MxCaDWinform
             // axMxDrawX1
             // 
             this.axMxDrawX1.Enabled = true;
-            this.axMxDrawX1.Location = new System.Drawing.Point(69, 38);
+            this.axMxDrawX1.Location = new System.Drawing.Point(404, 215);
             this.axMxDrawX1.Name = "axMxDrawX1";
             this.axMxDrawX1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMxDrawX1.OcxState")));
-            this.axMxDrawX1.Size = new System.Drawing.Size(667, 349);
+            this.axMxDrawX1.Size = new System.Drawing.Size(100, 50);
             this.axMxDrawX1.TabIndex = 0;
             // 
             // Form1

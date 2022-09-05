@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode", "LeetCode\LeetCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxCAD", "MxCAD\MxCAD.csproj", "{B185AF67-0849-419A-8E1D-451AFB2CE488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxCaDWinform", "MxCaDWinform\MxCaDWinform.csproj", "{8407C1DE-B6A5-465A-836E-2B19486F8535}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MxCADWinform", "MxCADWinform\MxCADWinform.csproj", "{D5ABE325-3C26-4890-9336-F40E15EC01B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,10 +107,10 @@ Global
 		{B185AF67-0849-419A-8E1D-451AFB2CE488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B185AF67-0849-419A-8E1D-451AFB2CE488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B185AF67-0849-419A-8E1D-451AFB2CE488}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8407C1DE-B6A5-465A-836E-2B19486F8535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8407C1DE-B6A5-465A-836E-2B19486F8535}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8407C1DE-B6A5-465A-836E-2B19486F8535}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8407C1DE-B6A5-465A-836E-2B19486F8535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5ABE325-3C26-4890-9336-F40E15EC01B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5ABE325-3C26-4890-9336-F40E15EC01B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5ABE325-3C26-4890-9336-F40E15EC01B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5ABE325-3C26-4890-9336-F40E15EC01B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

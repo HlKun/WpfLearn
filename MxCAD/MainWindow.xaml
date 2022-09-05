@@ -12,10 +12,13 @@
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="1">
-            <Button x:Name="DrawPointButton" Click="DrawPointButton_Click">绘制点</Button>
-            <Button x:Name="DrawPolyLineButton" Click="DrawPolyLineButton_Click" Margin="0,20,0,0">绘制多段线</Button>
-            <Button x:Name="GetResultButton" Click="GetResultButton_Click"  Margin="0,20,0,0">求解</Button>
-        </StackPanel>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="GetResultButton" Click="GetResultButton_Click">求解</Button>
+            <ListBox x:Name="ResultBox" Grid.Row="1" Margin="0,20,0,0"></ListBox>
+        </Grid>
     </Grid>
 </Window>

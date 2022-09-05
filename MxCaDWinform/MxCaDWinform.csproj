@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8407C1DE-B6A5-465A-836E-2B19486F8535}</ProjectGuid>
+    <ProjectGuid>{D5ABE325-3C26-4890-9336-F40E15EC01B1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MxCaDWinform</RootNamespace>
-    <AssemblyName>MxCaDWinform</AssemblyName>
+    <RootNamespace>MxCADWinform</RootNamespace>
+    <AssemblyName>MxCADWinform</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

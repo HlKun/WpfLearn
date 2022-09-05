@@ -34,98 +34,119 @@ namespace MxCAD
             host.SetValue(Grid.ColumnProperty, 0);
             mxdraw.Children.Add(host);
 
-            axMxDrawX.ImplementCommandEvent += new AxMxDrawXLib._DMxDrawXEvents_ImplementCommandEventEventHandler(AxMxDrawX_ImplementCommandEvent);
+            axMxDrawX.InitComplete += AxMxDrawX_InitComplete;
+            axMxDrawX.ImplementCommandEvent += AxMxDrawX_ImplementCommandEvent;
         }
 
-        private void DrawPoint()
+        private void AxMxDrawX_InitComplete(object sender, EventArgs e)
         {
-            MxDrawUtility mxUtility = new MxDrawUtility();
-
-            while (true)
-            {
-                MxDrawPoint point = mxUtility.GetPoint(null, "指定点");
-                if (point == null)
-                    return;
-
-                axMxDrawX.DrawPoint(point.x, point.y);
-            }
-        }
-
-        private void DrawPolyLine()
-        {
-            MxDrawUtility mxUtility = new MxDrawUtility();
-
-            MxDrawPoint point1 = mxUtility.GetPoint(null, "点取第一点");
-            if (point1 == null)
-                return;
-
-            axMxDrawX.PathMoveTo(point1.x, point1.y);
-
-            MxDrawPoint point2 = mxUtility.GetPoint(point1, "点取下一点");
-            if (point2 == null)
-                return;
-
-            axMxDrawX.PathLineTo(point2.x, point2.y);
-            long id = axMxDrawX.DrawLine(point1.x, point1.y, point2.x, point2.y);
-
-            List<long> tmpobj = new List<long>
-            {
-                id
-            };
-
-            point1 = point2;
-            while (true)
-            {
-                point2 = mxUtility.GetPoint(point1, "点取下一点");
-                if (point2 == null)
-                    break;
-
-                axMxDrawX.PathLineTo(point2.x, point2.y);
-                id = axMxDrawX.DrawLine(point1.x, point1.y, point2.x, point2.y);
-                tmpobj.Add(id);
-
-                point1 = point2;
-            }
-
-            for (int i = 0; i < tmpobj.Count; i++)
-            {
-                axMxDrawX.Erase(tmpobj[i]);
-            }
-
-            axMxDrawX.DrawPathToPolyline();
+            axMxDrawX.RegistUserCustomCommand("BoolPolygon", 1);
         }
 
         private void AxMxDrawX_ImplementCommandEvent(object sender, AxMxDrawXLib._DMxDrawXEvents_ImplementCommandEventEvent e)
         {
-            switch (e.iCommandId)
-            {
-                case 1:
-                    {
-                        DrawPoint();
-                        break;
-                    }
-                case 2:
-                    {
-                        DrawPolyLine();
-                        break;
-                    }
-                default:
-                    break;
-            }
-        }
-
-        private void DrawPointButton_Click(object sender, RoutedEventArgs e)
-        {
-            axMxDrawX.DoCommand(1);
-        }
-
-        private void DrawPolyLineButton_Click(object sender, RoutedEventArgs e)
-        {
-            axMxDrawX.DoCommand(2);
+            if (e.iCommandId == 1)
+                SelectEntity();
         }
 
         private void GetResultButton_Click(object sender, RoutedEventArgs e)
         {
+            axMxDrawX.Prompt("BoolPolygon");
+            axMxDrawX.DoCommand(1);
         }
+
+        private void SelectEntity()
+        {
+            MxDrawUiPrEntity getEntity = new MxDrawUiPrEntity
+            {
+                message = "选择一个多边形"
+            };
+
+            if (getEntity.go() != MCAD_McUiPrStatus.mcOk)
+                return;
+
+            MxDrawPolyline polygon;
+            if (getEntity.Entity().ObjectName == "McDbPolyline")
+            {
+                polygon = (MxDrawPolyline)getEntity.Entity();
+
+                if (!polygon.IsClosed())
+                    return;
+
+                polygon.Highlight(true);
+            }
+            else
+                return;
+
+            MxDrawUiPrPoint getPoint = new MxDrawUiPrPoint
+            {
+                message = "选择一个点"
+            };
+
+            if (getPoint.go() != MCAD_McUiPrStatus.mcOk)
+            {
+                polygon.Highlight(false);
+                return;
+            }
+
+            MxDrawPoint point = getPoint.value();
+
+            if (polygon.IsClosed())
+            {
+                List<Vector2D> points = new List<Vector2D>();
+
+                for (int i = 0; i < polygon.NumVerts; i++)
+                {
+                    MxDrawPoint mxDrawPoint = polygon.GetPointAt(i);
+                    points.Add(new Vector2D(mxDrawPoint.x, mxDrawPoint.y));
+                }
+
+                bool result = IsPointInPoly(new Vector2D(point.x, point.y), points);
+                ResultBox.Items.Add(result ? "In" : "Out");
+            }
+
+            polygon.Highlight(false);
+        }
+
+        private bool IsPointInPoly(Vector2D P, List<Vector2D> points)
+        {
+            bool isInPoly = false;
+
+            Vector2D A = points[0];
+
+            for (int i = 1; i <= points.Count; i++)
+            {
+                Vector2D B = points[i == points.Count ? 0 : i];
+
+                if ((B.Y <= P.Y && P.Y < A.Y) || (A.Y <= P.Y && P.Y < B.Y))
+                {
+                    Vector2D BP = new Vector2D(P.X - B.X, P.Y - B.Y);
+                    Vector2D BA = new Vector2D(A.X - B.X, A.Y - B.Y);
+
+                    double t = BP.X * BA.Y - BP.Y * BA.X;
+                    if (A.Y < B.Y)
+                        t = -t;
+
+                    if (t < 0)
+                        isInPoly = !isInPoly;
+                }
+
+                A = B;
+            }
+
+            return isInPoly;
+        }
+    }
+
+    public class Vector2D
+    {
+        public Vector2D(double _x, double _y)
+        {
+            X = _x;
+            Y = _y;
+        }
+
+        public double X { get; set; }
+        public double Y { get; set; }
     }
 }
