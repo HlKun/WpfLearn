@@ -12,6 +12,7 @@ namespace DesignPattern.Model
             Console.WriteLine("Phone truns on");
         }
 
+        public int Flag { get; set; }
         public string Board { get; set; }
         public string Cpu { get; set; }
         public string BlueTooth { get; set; }
