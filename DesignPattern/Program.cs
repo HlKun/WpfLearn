@@ -1,5 +1,8 @@
 ﻿using System;
 using DesignPattern.Creator.Builder;
+using DesignPattern.Model;
+using DesignPattern.Interface;
+using DesignPattern.Structure;
 
 namespace DesignPattern
 {
@@ -7,10 +10,7 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
-            Builder builder = new IPhoneBuilder();
-            PhoneDirector.Builder(builder);
-
-            var p = builder.Get();
+            
         }
     }
 }
