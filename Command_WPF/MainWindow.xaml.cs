@@ -24,19 +24,22 @@ namespace Command_WPF
         {
             InitializeComponent();
 
-            button.Command = routedCommand;
-            button.CommandTarget = text;
+            DataContext = this;
 
-            CommandBinding commandBinding = new CommandBinding
-            {
-                Command = routedCommand
-            };
-            commandBinding.CanExecute += CommandBinding_CanExecute;
-            commandBinding.Executed += CommandBinding_Executed;
+            //button.Command = routedCommand;
+            //button.CommandTarget = text;
+
+            //CommandBinding commandBinding = new CommandBinding
+            //{
+            //    Command = routedCommand
+            //};
+            //commandBinding.CanExecute += CommandBinding_CanExecute;
+            //commandBinding.Executed += CommandBinding_Executed;
+
+
+            //grid.CommandBindings.Add(commandBinding);
 
             RelayCommand = new RelayCommand(Relay_Excute, Relay_CanExcute);
-
-            grid.CommandBindings.Add(commandBinding);
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -47,6 +50,7 @@ namespace Command_WPF
         private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
+
             if (string.IsNullOrEmpty(text.Text))
                 e.CanExecute = false;
 

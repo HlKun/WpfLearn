@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox ItemsSource="{Binding Students}">
+        <ListBox ItemsSource="{Binding Students}" x:Name="listBox">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}"></TextBlock>
-                        <TextBlock Text="{Binding DataContext.NewName,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBox}}}"></TextBlock>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding DataContext.NewName,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type ListBox}}}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

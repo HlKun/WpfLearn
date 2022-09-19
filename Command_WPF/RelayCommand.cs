@@ -11,29 +11,26 @@ namespace Command_WPF
     {
         public RelayCommand(Action<object> excute) : this(excute, null)
         {
-
         }
 
-        public RelayCommand(Action<object> excute, Func<object,bool> canExcute)
+        public RelayCommand(Action<object> excute, Func<object, bool> canExcute)
         {
-            _canexcute = canExcute;
             _excute = excute;
+            _canexcute = canExcute;
         }
 
-        private readonly Func<object, bool> _canexcute;
         private readonly Action<object> _excute;
+        private readonly Func<object, bool> _canexcute;
 
         public event EventHandler CanExecuteChanged
         {
             add
             {
-                if (_canexcute != null)
-                    CanExecuteChanged += value;
+                CommandManager.RequerySuggested += value;
             }
             remove
             {
-                if (_canexcute != null)
-                    CanExecuteChanged -= value;
+                CommandManager.RequerySuggested -= value;
             }
         }
 
