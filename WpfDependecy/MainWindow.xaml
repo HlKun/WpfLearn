@@ -9,6 +9,6 @@
     <StackPanel>
         <local:CustomButton MyContent="{Binding ContentSource}"></local:CustomButton>
 
-        <Button x:Name="ShowBtn" Click="ShowBtn_Click" Content="{Binding ContentSource}"></Button>
+        <Button x:Name="ShowBtn" Click="ShowBtn_Click" Command="" Content="{Binding ContentSource}"></Button>
     </StackPanel>
 </Window>
