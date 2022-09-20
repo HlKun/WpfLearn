@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DesignPattern.Structure
 {
-    #region Bridge 组合替换继承
+    #region Bridge 组合代替继承
     public interface IBrand
     {
 
