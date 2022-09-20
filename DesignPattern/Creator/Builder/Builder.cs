@@ -2,6 +2,9 @@
 
 namespace DesignPattern.Creator.Builder
 {
+    /// <summary>
+    /// 建造者模式
+    /// </summary>
     public abstract class Builder
     {
         protected Phone phone = new Phone();

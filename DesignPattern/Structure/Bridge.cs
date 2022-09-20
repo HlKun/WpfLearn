@@ -15,6 +15,14 @@ namespace DesignPattern.Structure
 
     }
 
+    public class Dell : IBrand { }
+
+    public class Lenevo : IBrand { }
+
+    public class Desktop : IVariety { }
+
+    public class Laptop : IVariety { }
+
     public class Computer
     {
         private readonly IBrand brand;
