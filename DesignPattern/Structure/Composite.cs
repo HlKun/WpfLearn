@@ -35,6 +35,16 @@ namespace DesignPattern.Structure
         }
     }
 
+    public class A : Composite
+    {
+        public override void Draw()
+        {
+            base.Draw();
+
+            Console.WriteLine("A");
+        }
+    }
+
     public class Leaf : Component
     {
         public override void Add(Component component)
