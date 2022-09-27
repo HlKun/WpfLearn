@@ -17,7 +17,6 @@ namespace DesignPattern.Structure
         }
     }
 
-
     /// <summary>
     /// 代理模式
     /// </summary>
