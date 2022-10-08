@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
+/// <summary>
+/// 组合模式
+/// </summary>
 namespace DesignPattern.Structure
 {
     public abstract class Component

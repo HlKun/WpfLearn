@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
+/// <summary>
+/// 适配器模式
+/// </summary>
 namespace DesignPattern.Structure
 {
     public interface ITarget

@@ -21,24 +21,6 @@ namespace DesignPattern.Structure
         }
     }
 
-    public class Decorator : People
-    {
-        private readonly People people;
-
-        public Decorator(People people)
-        {
-            this.people = people;
-        }
-
-        public override void Say()
-        {
-            if (people != null)
-            {
-                people.Say();
-            }
-        }
-    }
-
     public class English : Decorator
     {
         public English(People people) : base(people) { }
@@ -58,6 +40,24 @@ namespace DesignPattern.Structure
         {
             base.Say();
             Console.WriteLine("France");
+        }
+    }
+
+    public class Decorator : People
+    {
+        private readonly People people;
+
+        public Decorator(People people)
+        {
+            this.people = people;
+        }
+
+        public override void Say()
+        {
+            if (people != null)
+            {
+                people.Say();
+            }
         }
     }
 }
