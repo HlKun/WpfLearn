@@ -21,10 +21,7 @@ namespace DesignPattern.Behavior
             tv = _tv;
         }
 
-        public override void Execute()
-        {
-            tv.TurnOn();
-        }
+        public override void Execute() => tv.TurnOn();
     }
 
     /// <summary>
